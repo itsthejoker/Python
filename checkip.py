@@ -5,4 +5,5 @@ sauce = urllib.request.urlopen('http://checkip.dyndns.com/').read()
 
 soup = bs.BeautifulSoup(sauce,'lxml')
 
-print(soup.body.string)
+print(soup.body.text)
+
