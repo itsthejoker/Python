@@ -1,19 +1,15 @@
 #check Temperature in Martinsville IN 
 
-import bs4 as bs 
-import urllib.request
+from bs4 import BeautifulSoup
+import requests
 
 #grab the url
-sauce = urllib.request.urlopen('https://www.wunderground.com/cgi-bin/findweather/getForecast?query=Martinsville%2C+IN').read()
+site = requests.get('https://www.wunderground.com/cgi-bin/findweather/getForecast?query=Martinsville%2C+IN')
 
-soup = bs.BeautifulSoup(sauce,'lxml')
+soup = BeautifulSoup(site.text, 'html.parser')
 
-#print the title
-print(soup.title.string)
+#drilling down on data
+site2 = soup.find('div',{'id':'curTemp'})
+site3 = site2.find('span',{'class':'wx-value'})
 
-#still working on the part ot parse the temperature with fahrenheit
-
-wx_value = soup.find_all()
-
-print(wx_value)
-
+print(site3.text, 'Degrees Fahrenheit')
