@@ -1,5 +1,7 @@
 #API KEYS, Tokens and Account Names
 *.txt
+twilio_account.txt
+twilio_token.txt
 
 # Python Template from Github
 # Byte-compiled / optimized / DLL files
