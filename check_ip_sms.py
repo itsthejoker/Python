@@ -2,7 +2,7 @@ import bs4 as bs
 import urllib.request
 from twilio.rest import TwilioRestClient
 
-# pulling the KEY and TOKEN
+# pulling the KEY, TOKEN and PHONE
 ACCOUNT_KEY = open('twilio_account.txt').read().strip()
 ACCOUNT_TOKEN = open('twilio_token.txt').read().strip()
 TWILIO_PHONE = open('twilio_phone.txt').read().strip()
