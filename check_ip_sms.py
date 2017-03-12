@@ -1,12 +1,7 @@
 import bs4 as bs
 import urllib.request
 from twilio.rest import TwilioRestClient
-
-# pulling the KEY, TOKEN and PHONE
-ACCOUNT_KEY = open('twilio_account.txt').read().strip()
-ACCOUNT_TOKEN = open('twilio_token.txt').read().strip()
-TWILIO_PHONE = open('twilio_phone.txt').read().strip()
-CELL_PHONE = open('cell_phone.txt').read().strip()
+from API_KEYS import ACCOUNT_TOKEN, ACCOUNT_KEY, TWILIO_PHONE, CELL_PHONE
 
 sauce = urllib.request.urlopen('http://checkip.dyndns.com/').read()
 
