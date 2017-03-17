@@ -12,11 +12,11 @@ remoteServerIP = socket.gethostbyname(remoteServer)
 
 # print the scanning ip
 print('*' * 60)
-print('Please wait, scanning remote host', remoteServerIP)
+print('Please wait, scanning remote host of well know ports', remoteServerIP)
 print('*' * 60)
 
 # time scan started
-t1 = datetime.now()
+start_time = datetime.now()
 
 # scan all ports between 1 and 1024
 try:
@@ -30,19 +30,19 @@ try:
 # error handling
 except KeyboardInterrupt:
     print('You pressed Ctrl+C')
-    sys.exit()
+    sys.exit(1)
 
 except socket.gaierror:
     print('Hostname could not be resolved. Exiting')
-    sys.exit()
+    sys.exit(1)
 
 except socket.error:
     print('Could not connect to server')
-    sys.exit()
+    sys.exit(1)
 
 # time for script to finish
-t2 = datetime.now()
-total = t2 - t1
+end_time = datetime.now()
+completion_time = end_time - start_time
 
-# print compltetion time
-print('Scanning Completed in: ', total)
+# print completion time
+print('Scanning Completed in: ', completion_time)
