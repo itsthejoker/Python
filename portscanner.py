@@ -12,7 +12,7 @@ remoteServerIP = socket.gethostbyname(remoteServer)
 
 # print the scanning ip
 print('*' * 60)
-print('Please wait, scanning remote host of well know ports', remoteServerIP)
+print('Please wait, scanning remote host of well-know ports', remoteServerIP)
 print('*' * 60)
 
 # time scan started
@@ -33,7 +33,7 @@ except KeyboardInterrupt:
     sys.exit(1)
 
 except socket.gaierror:
-    print('Hostname could not be resolved. Exiting')
+    print('Hostname could not be resolved')
     sys.exit(1)
 
 except socket.error:
@@ -45,4 +45,4 @@ end_time = datetime.now()
 completion_time = end_time - start_time
 
 # print completion time
-print('Scanning Completed in: ', completion_time)
+print('Scanning completed in: ', completion_time)
