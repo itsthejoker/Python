@@ -1,3 +1,4 @@
+import validators
 import socket
 import subprocess
 import sys
@@ -8,8 +9,14 @@ subprocess.call('clear', shell=True)
 
 # get the ip address to scan
 remoteServer = input('Enter a remote host to scan: ')
-remoteServerIP = socket.gethostbyname(remoteServer)
 
+# validation
+if validators.ip_address.ipv4(remoteServer):
+    remoteServerIP = socket.gethostbyname(remoteServer)
+else:
+    print('Not a valid IPv4 address. Search for valid IPv4 addresses in your favorite search engine.')
+    exit()
+ 
 # print the scanning ip
 print('*' * 60)
 print('Please wait, scanning remote host of well-know ports', remoteServerIP)
