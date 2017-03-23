@@ -1,5 +1,7 @@
 #API KEYS, Accounts and Tokens
 *.txt
+API_KEYS.py
+test.py
 
 # gitignore info from GitHub python.gitignore repository
 # Byte-compiled / optimized / DLL files

@@ -1,11 +1,9 @@
 import urllib.request
 import json
-
-# pulling API Key
-API_KEY = open('wu_api_key.txt').read().strip()
+from API_KEYS import WEATHER_UNDERGROUND_KEY
 
 # getting the url
-f = urllib.request.urlopen('http://api.wunderground.com/api/' + API_KEY + '/geolookup/conditions/q/IN/Martinsville.json')
+f = urllib.request.urlopen('http://api.wunderground.com/api/' + WEATHER_UNDERGROUND_KEY + '/geolookup/conditions/q/IN/Martinsville.json')
 
 # decoding the text
 json_string = f.read().decode('utf-8')
