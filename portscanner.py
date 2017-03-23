@@ -7,16 +7,25 @@ from datetime import datetime
 # clearing the screen
 subprocess.call('clear', shell=True)
 
-# get the ip address to scan
-remoteServer = input('Enter a remote host to scan: ')
 
-# validation
-if validators.ip_address.ipv4(remoteServer):
-    remoteServerIP = socket.gethostbyname(remoteServer)
-else:
-    print('Not a valid IPv4 address. Search for valid IPv4 addresses in your favorite search engine.')
-    exit()
- 
+def is_valid(address):
+    # returns the validator result, True or False.
+    return validators.ip_address.ipv4(remoteServer) or validators.domain.domain(remoteServer)
+
+while True:  # True is always True. This loop will never end.
+    remoteServer = input('Enter a remote host to scan: ')
+    if remoteServer == 'exit':
+        sys.exit(0)
+    if is_valid(remoteServer):
+        break
+    else:
+        print(
+            'This address was not recognized as a valid IPv4 address or hostname.'
+            'Please try again. Type \'exit\' to quit.'
+        )
+
+remoteServerIP = socket.gethostbyname(remoteServer)
+
 # print the scanning ip
 print('*' * 60)
 print('Please wait, scanning remote host of well-know ports', remoteServerIP)
