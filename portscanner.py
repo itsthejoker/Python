@@ -10,13 +10,13 @@ subprocess.call('clear', shell=True)
 
 def is_valid(address):
     # returns the validator result, True or False.
-    return validators.ip_address.ipv4(remoteServer) or validators.domain.domain(remoteServer)
+    return validators.ip_address.ipv4(remote_server) or validators.domain(remote_server)
 
 while True:  # True is always True. This loop will never end.
-    remoteServer = input('Enter a remote host to scan: ')
-    if remoteServer == 'exit':
+    remote_server = input('Enter a remote host to scan: ')
+    if remote_server == 'exit':
         sys.exit(0)
-    if is_valid(remoteServer):
+    if is_valid(remote_server):
         break
     else:
         print(
@@ -24,11 +24,11 @@ while True:  # True is always True. This loop will never end.
             'Please try again. Type \'exit\' to quit.'
         )
 
-remoteServerIP = socket.gethostbyname(remoteServer)
+remote_serverIP = socket.gethostbyname(remote_server)
 
 # print the scanning ip
 print('*' * 60)
-print('Please wait, scanning remote host of well-know ports', remoteServerIP)
+print('Please wait, scanning remote host of well-know ports', remote_serverIP)
 print('*' * 60)
 
 # time scan started
@@ -38,7 +38,7 @@ start_time = datetime.now()
 try:
     for port in range(1, 1025):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        result = sock.connect_ex((remoteServerIP, port))
+        result = sock.connect_ex((remote_serverIP, port))
         if result == 0:
             print('Port {}: 	 Open'.format(port))
         sock.close()
