@@ -5,7 +5,7 @@ import bs4 as bs
 import urllib.request
 from API_KEYS import EMAIL_ADDRESS, EMAIL_PASSWORD
 
-# gather IP address
+# grab IP address
 sauce = urllib.request.urlopen('http://checkip.dyndns.com/').read()
 
 soup = bs.BeautifulSoup(sauce, 'lxml')
