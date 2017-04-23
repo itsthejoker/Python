@@ -1,3 +1,5 @@
+# need to revisit this script
+
 import socket
 
 # open the socket
