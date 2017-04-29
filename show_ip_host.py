@@ -2,7 +2,7 @@
 
 import socket
 
-# open the socket
+# open the socket and connect to google DNS
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(('8.8.8.8', 80))
 
