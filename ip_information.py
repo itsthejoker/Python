@@ -1,3 +1,6 @@
+# need to revist this to pull information by other means
+# script relies on user(s) OS installs
+
 import os
 import subprocess
 
