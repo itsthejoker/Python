@@ -18,3 +18,4 @@ print('message:', message)
 sock=socket.socket(socket.AF_INET, # Internet
              socket.SOCK_DGRAM) # UDP
 sock.sendto(message.encode('utf-8'), (ip,port))
+sock.close()
