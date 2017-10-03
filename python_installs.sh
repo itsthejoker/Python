@@ -33,4 +33,5 @@ pip install python-nmap
 pip install scrapy
 pip install twisted
 pip install validators
+pip install wheel
 
