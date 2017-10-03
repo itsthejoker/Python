@@ -2,6 +2,7 @@
 *.txt
 API_KEYS.py
 test.py
+python_installs.sh
 
 # gitignore info from GitHub python.gitignore repository
 # Byte-compiled / optimized / DLL files
