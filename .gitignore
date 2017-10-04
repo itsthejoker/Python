@@ -1,5 +1,6 @@
 #API KEYS, Accounts, and Tokens
 *.txt
+!requirements.txt
 API_KEYS.py
 test.py
 
