@@ -3,8 +3,9 @@
 
 import requests
 
-data = {'format':'json'}
+data = {'format': 'json'}
 r = requests.get('https://api.ipify.org', data)
 r.json()
 
 print(r.text)
+
