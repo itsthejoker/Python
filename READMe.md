@@ -7,3 +7,5 @@ Things that I am working on and test files.
 Created a python_assist branch.
 
 Slowly adding scripts that come to mind.
+
+Have changed my focus to more of a dev ops side of Python
