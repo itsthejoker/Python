@@ -8,5 +8,4 @@ Slowly adding scripts that come to mind.
 
 Have changed my focus to more of a dev ops side of Python.
 
-Considering a structure change to the branch.
-
+Made a structure change to the branch.
