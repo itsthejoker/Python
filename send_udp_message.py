@@ -15,7 +15,7 @@ print('UDP target port:', port)
 print('message:', message)
 
 # open port and send message
-sock=socket.socket(socket.AF_INET, # Internet
-             socket.SOCK_DGRAM) # UDP
-sock.sendto(message.encode('utf-8'), (ip,port))
+sock = socket.socket(socket.AF_INET,  # Internet
+                     socket.SOCK_DGRAM)  # UDP
+sock.sendto(message.encode('utf-8'), (ip, port))
 sock.close()

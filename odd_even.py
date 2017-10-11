@@ -7,5 +7,5 @@ while len(numbers) > 0:
         even.append(number)
     else:
         odd.append(number)
-print (even)
-print (odd)
+print(even)
+print(odd)
