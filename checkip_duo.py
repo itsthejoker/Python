@@ -3,9 +3,5 @@
 
 import requests
 
-data = {'format': 'json'}
-r = requests.get('https://api.ipify.org', data)
-r.json()
-
-print(r.text)
-
+data = requests.get('https://api.ipify.org').text
+print('IP Address is', format(data))
