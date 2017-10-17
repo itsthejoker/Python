@@ -3,6 +3,7 @@
 !requirements.txt
 API_KEYS.py
 test.py
+*.csv
 
 # gitignore info from GitHub python.gitignore repository
 # Byte-compiled / optimized / DLL files
