@@ -7,6 +7,4 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(r.text, 'html.parser')
 results = soup.find('div', attrs={'class':'today_nowcard-temp'})
 
-temp = results.find('class')
-
-print(temp)
+print('The temperature in Martinsville is',results.text)
