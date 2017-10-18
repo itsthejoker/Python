@@ -34,4 +34,4 @@ pip install scrapy
 pip install twisted
 pip install validators
 pip install wheel
-
+pip install pandas
