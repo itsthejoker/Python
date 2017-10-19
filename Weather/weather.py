@@ -1,4 +1,5 @@
-# using json and the Weather Underground API to pull info
+# using json and the Weather Underground API
+# pulling weather data and displaying
 
 import urllib.request
 import json
@@ -31,6 +32,6 @@ print('Wind gusts are at: %s mph' % (wind_gust))
 print('Pressure is: %s mb' % (pressure_mb))
 print('Feels like: %s F' % (feels_like))
 print('Visisbility is: %s mi' % (visibility_mi))
-print('Precipitaion today: %s inches' % (precipitation_in))
+print('Precipitation today: %s inches' % (precipitation_in))
 print('General weather is: %s' % (weather))
 f.close()
