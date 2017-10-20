@@ -3,6 +3,7 @@
 
 import urllib.request
 import json
+import pandas as pd
 
 # getting the url
 f = urllib.request.urlopen('https://cve.circl.lu/api/search/apple/mac_os')
@@ -12,8 +13,16 @@ json_string = f.read().decode('utf-8')
 
 # parsing the information
 parsed_json = json.loads(json_string)
-cve = parsed_json[0]['id']
 
-print('CVE is: %s' % (cve))
+records = []
+for i in parsed_json:
+    cve = parsed_json[0]['id']
+    cwe = parsed_json[0]['cwe']
+    summary = parsed_json[0]['summary']
+    published = parsed_json[0]['Published']
+    last_modified = parsed_json[0]['last-modified']
+    records.append((cve, cwe, summary, published, last_modified))
 
-f.close()
+# export to csv
+df = pd.DataFrame(records, columns=['cve', 'cwe', 'summary', 'published', 'last_modified'])
+df.to_csv('cve_apple.csv', index=False, encoding='utf-8')
