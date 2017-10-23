@@ -1,6 +1,6 @@
 # Apple's current CVE list from
 # circl.lu
-# pulling the last 100 CVE's
+# pulling all the CVE's
 
 import urllib.request
 import json
