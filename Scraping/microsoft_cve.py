@@ -7,7 +7,6 @@ import json
 import pandas as pd
 
 # getting the url
-
 f = urllib.request.urlopen('https://cve.circl.lu/api/search/microsoft/windows')
 
 # decoding the text
